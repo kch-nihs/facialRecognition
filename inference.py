@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Ultra-low latency YOLO webcam server with threading optimization
-"""
-
 import cv2
 import numpy as np
 from ultralytics import YOLO
