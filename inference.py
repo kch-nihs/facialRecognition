@@ -7,14 +7,17 @@ import threading
 import time
 import queue
 import argparse
-
+import torch
 
 class FrameProcessor:
-    def __init__(self, model_path='best.pt', conf_threshold=0.25):
+    def __init__(self, model_path='best.pt', conf_threshold=0.25, device=None):
         """Initialize YOLO model"""
-        self.model = YOLO(model_path)
+        if device is None:
+            device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        self.device = device
+        self.model = YOLO(model_path).to(self.device)
         self.conf_threshold = conf_threshold
-        self.frame_queue = queue.Queue(maxsize=2)  # Small queue to prevent delay
+        self.frame_queue = queue.Queue(maxsize=2)
         self.result_queue = queue.Queue(maxsize=2)
         self.processing = False
         self.latest_frame = None
@@ -33,7 +36,7 @@ class FrameProcessor:
                         imgsz=640,
                         conf=self.conf_threshold,
                         verbose=False,
-                        device='0' if cv2.cuda.getCudaEnabledDeviceCount() > 0 else 'cpu'
+                        device='cuda'
                     )
 
                     # Store latest result
