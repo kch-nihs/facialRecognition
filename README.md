@@ -14,3 +14,32 @@ This project uses the YOLOv8 object detection algorithm, fine-tuned on a facial 
 - OpenCV
 - Flask
 - Ultralytics YOLO
+
+## Running this project
+
+1. **Clone the Repository:**
+    ```bash
+    git clone https://github.com/kch-nihs/facialRecognition.git
+    cd facialRecognition
+
+2. **Install YOLO on Jetson:**
+   Install Torch and Torchvision
+   ```bash
+   pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/torch-2.5.0a0+872d972e41.nv24.08-cp310-cp310-linux_aarch64.whl
+   pip install https://github.com/ultralytics/assets/releases/download/v0.0.0/torchvision-0.20.0a0+afc54f7-cp310-cp310-linux_aarch64.whl
+   ```
+
+   Install cuSPARSELt
+   ```bash
+    wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm64/cuda-keyring_1.1-1_all.deb
+    sudo dpkg -i cuda-keyring_1.1-1_all.deb
+    sudo apt-get update
+    sudo apt-get -y install libcusparselt0 libcusparselt-dev
+
+
+3. **Install dependencies:**
+   ```bash
+   pip install ultralytics opencv-python flask torch
+4. **Run inference.py file:**
+    ```bash
+    python inference.py
