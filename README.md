@@ -1,3 +1,7 @@
+[![PyTorch](https://img.shields.io/badge/Made%20with-PyTorch-EE4C2C?logo=pytorch)](https://pytorch.org/)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 # YOLO Facial Expression Detection
 A real-time facial expression detection system using YOLOv8 and a custom-trained dataset. The project provides a web interface for live webcam detection.
 
