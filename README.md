@@ -15,6 +15,8 @@ This project uses the YOLOv8 object detection algorithm, fine-tuned on a facial 
 - Flask
 - Ultralytics YOLO
 
+[View a video explanation here](https://youtu.be/Mef8XdRZyS4)
+
 ## Running this project
 
 1. **Clone the Repository:**
@@ -39,7 +41,10 @@ This project uses the YOLOv8 object detection algorithm, fine-tuned on a facial 
 
 3. **Install dependencies:**
    ```bash
-   pip install ultralytics opencv-python flask torch
+   pip install ultralytics opencv-python flask torch numpy
 4. **Run inference.py file:**
     ```bash
     python inference.py
+
+5. **Access to webstie**  
+    http://\<YOUR-IP-ADDRESS\>:5000
